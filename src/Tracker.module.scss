@@ -1,0 +1,86 @@
+.app {
+    max-width: 66em;
+    height: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 0px;
+}
+
+.cell {
+    height: 1.5em;
+    width: auto;
+    border: 0.5px solid #dce0e5;
+    padding: 0 0.625em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.empty {
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.fixedwidth {
+    width: 2em;
+}
+
+.outofbusiness {
+    background-color: #eef1f4;
+}
+
+.today {
+    background-color: #ffdbdb;
+}
+
+.actions {
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.625em;
+}
+
+.aligncenter {
+    align-items: center;
+}
+
+.gap {
+    gap: 0.625em;
+}
+
+.scroll {
+    overflow: scroll;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.margin {
+    margin: 0.625em;
+}
+
+.grow {
+    flex: 1 0 12em;
+}
+
+.shrink {
+    flex: 0 1 auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
