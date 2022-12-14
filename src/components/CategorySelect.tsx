@@ -1,7 +1,8 @@
 import * as React from "react";
 import { identity } from "lodash-es";
 import { Suggest2, ItemRendererProps } from "@blueprintjs/select";
-import { MenuItem } from "@blueprintjs/core";
+import { Icon, MenuItem } from "@blueprintjs/core";
+import { stringToColor } from "../utils/color";
 
 interface ICategorySelectProps {
     value?: string;
@@ -35,6 +36,7 @@ function handleRenderItems(item: string, itemProps: ItemRendererProps): JSX.Elem
             disabled={itemProps.modifiers.disabled}
             key={item}
             label={item}
+            icon={<Icon icon="tag" color={stringToColor(item)} />}
             onClick={itemProps.handleClick}
             onFocus={itemProps.handleFocus}
             roleStructure="listoption"

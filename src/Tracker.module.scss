@@ -16,6 +16,20 @@
     width: auto;
     border: 0.5px solid #dce0e5;
     padding: 0 0.625em;
+
+    :hover {
+        background-color: #b5f8ff;
+    }
+}
+
+.cellContent {
+    display: flex;
+    gap: 0.625em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cellText {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

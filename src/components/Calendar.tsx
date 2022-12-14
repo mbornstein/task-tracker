@@ -3,6 +3,9 @@ import cx from "classnames";
 import * as React from "react";
 import { addSecondsToDate, getOffsetSeconds, truncateToCell, truncDay } from "../utils/datetime";
 import { Activity } from "../types";
+import { stringToColor } from "../utils/color";
+import { Icon } from "@blueprintjs/core";
+import { Tooltip2 } from "@blueprintjs/popover2";
 
 interface ICalendarProps {
     numDays: number;
@@ -66,7 +69,15 @@ export const Calendar: React.FC<ICalendarProps> = ({
                                                         : handleSelectDate(truncatedCellDateTime)
                                                 }
                                             >
-                                                {activity?.title}
+                                                {activity && (
+                                                    <div className={css.cellContent}>
+                                                        <div className={css.cellText}>{activity.title}</div>
+                                                        <div className={css.row}>
+                                                            {renderTag(activity.project)}
+                                                            {renderTag(activity.type)}
+                                                        </div>
+                                                    </div>
+                                                )}
                                             </td>
                                         );
                                     })}
@@ -79,3 +90,9 @@ export const Calendar: React.FC<ICalendarProps> = ({
         </div>
     );
 };
+
+const renderTag = (tag?: string) => (
+    <Tooltip2 content={tag}>
+        <Icon icon="tag" color={tag ? stringToColor(tag) : "#00000000"} />
+    </Tooltip2>
+);
