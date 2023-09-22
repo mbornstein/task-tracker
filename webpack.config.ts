@@ -1,7 +1,8 @@
 import path from "path";
 import { Configuration } from "webpack";
-import * as webpack from "webpack";
-import * as webpackDevServer from "webpack-dev-server";
+import "webpack-dev-server";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+
 
 const config: Configuration = {
   mode: "development",
@@ -40,13 +41,16 @@ const config: Configuration = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/dist/",
+    publicPath: "/",
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, "/"),
+      directory: path.join(__dirname, "/src"),
     },
   },
+  plugins: [
+    new HtmlWebpackPlugin(),
+  ],
 };
 
 export default config;
