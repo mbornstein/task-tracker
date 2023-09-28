@@ -19,14 +19,25 @@ function findGetParameter(parameterName: string): string {
     return result;
 }
 
-console.log(findGetParameter("test"));
+const dbId = findGetParameter("dbid")
+
+if (!dbId) {
+    window.alert('Please add the "dbid" query paramenter to the URL.')
+    throw new Error('dbid query paramenter not set in URL')
+}
+
+const baseUrl = findGetParameter("baseurl") || "http://localhost:4185"
 
 const client = new ApolloClient({
-    uri: `http://localhost:4185/dbs/${findGetParameter("db")}/graphql`,
+    uri: `${baseUrl}/dbs/${dbId}/graphql`,
     cache: new InMemoryCache(),
 });
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const body = document.getElementsByTagName("body")[0];
+const rootDiv = document.createElement("div");
+rootDiv.setAttribute("id", "root");
+body.appendChild(rootDiv);
+const root = ReactDOM.createRoot(rootDiv);
 root.render(
     <React.StrictMode>
         <ApolloProvider client={client}>
