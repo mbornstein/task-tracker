@@ -25,7 +25,7 @@ export const ApolloConfigProvider: React.FC<IApolloConfigProvider> = ({
             <div className={cx(css.row, css.gap, css.aligncenter)}>
                 <span>{baseUrl || "Base URL"}</span>
                 <span>{dbId || "DB ID"}</span>
-                <Button minimal icon="cog" onClick={() => setClient(undefined)}/>
+                <Button minimal icon="cog" onClick={() => setClient(undefined)} />
             </div>
             {client == null ? <div className={cx(css.row, css.gap, css.aligncenter)}>
                 <InputGroup
