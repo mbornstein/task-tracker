@@ -51,7 +51,7 @@ export const Tracker: React.FC<ITracker> = ({}) => {
         return <Spinner />;
     }
     return (
-        <div className={cx(css.app, css.column)}>
+        <div className={cx(css.tracker, css.column)}>
             <ActivityEditor activity={activity} onChangeActivity={setActivity} projects={projects} types={types} />
             <div className={cx(css.row, css.actions, css.margin, css.wrap)}>
                 <div className={css.shrink}>Specify the activity and select the start below</div>
