@@ -10,12 +10,14 @@ export const ApolloConfigProvider: React.FC<IApolloConfigProvider> = ({
     children
 }) => {
     const [dbId, setDbId] = React.useState<string | undefined>(findGetParameter("dbid"));
-    const [baseUrl, setBaseUrl] = React.useState<string | undefined>(findGetParameter("baseurl") || "https://www.airsequel.com/");
+    const [baseUrl, setBaseUrl] = React.useState<string | undefined>(
+        findGetParameter("baseurl") || "https://www.airsequel.com",
+    );
     const getMaybeClient = React.useCallback(() => {
         if (dbId == null || baseUrl == null) {
             return undefined;
         }
-        return getClient(dbId, baseUrl);
+        return getClient(baseUrl, dbId);
     }, [dbId, baseUrl]);
     const maybeClient = getMaybeClient();
     const [client, setClient] = React.useState(maybeClient);
