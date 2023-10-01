@@ -1,12 +1,12 @@
 // import { config } from "./config";
 
 export interface Activity {
-    title: string;
-    comment?: string;
-    start: Date;
-    project?: string;
-    type?: string;
-    link?: string;
+    title: string
+    comment?: string
+    start: Date
+    project?: string
+    type?: string
+    link?: string
 }
 
 // old below

@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from "@apollo/client"
 
 export const getActivities = gql`
     query {
@@ -17,7 +17,7 @@ export const getActivities = gql`
             project
         }
     }
-`;
+`
 
 export const insertActivities = gql`
     mutation InsertActivity($objects: [activity_insert_input!]!) {
@@ -25,4 +25,4 @@ export const insertActivities = gql`
             affected_rows
         }
     }
-`;
+`
