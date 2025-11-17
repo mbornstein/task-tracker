@@ -27,6 +27,8 @@ export const Calendar: React.FC<ICalendarProps> = ({
     onSelectDate,
 }) => {
     const hours = [
+        "06",
+        "07",
         "08",
         "09",
         "10",

@@ -40,7 +40,7 @@ const config: Configuration = {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
-        publicPath: "/",
+        publicPath: "/task-tracker/",
     },
     devServer: {
         static: {

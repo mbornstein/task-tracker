@@ -2,6 +2,7 @@
   "name": "task-tracker",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/task-tracker/",
   "dependencies": {
     "@apollo/client": "^3.7.1",
     "@blueprintjs/core": "^5.3.1",
